@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta Tags para codificação de caracteres e responsividade -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Descrição do site para SEO: essencial para indexação -->
+    <meta
+      name="description"
+      content="Este é meu primeiro site! Estou aprendendo HTML, CSS e JavaScript."
+    />
+
+    <!-- Palavras-chave do site: deve ser relevante e descrever o conteúdo -->
+    <meta
+      name="keywords"
+      content="primeiro site, HTML, CSS, JavaScript, aprendizado, tutorial"
+    />
+
+    <!-- Autor do site -->
+    <meta name="author" content="Filipe Maciel" />
+
+    <!-- Dados Open Graph (para redes sociais) -->
+    <meta property="og:title" content="Primeiro Site" />
+    <meta
+      property="og:description"
+      content="Este é o meu primeiro site! Aqui estou aprendendo HTML, CSS e JavaScript."
+    />
+    <!-- Aqui a URL de uma imagem de preview é opcional, mas se tiver uma imagem, é importante fornecer o link correto -->
+    <meta property="og:image" content="url_da_imagem_de_preview.jpg" />
+    <!-- A URL do site (pode ser deixada vaga se não tiver ainda uma página em produção) -->
+    <meta property="og:url" content="http://www.exemplo.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Cor da barra de navegação em dispositivos móveis -->
+    <meta name="theme-color" content="#008a08" />
+
+    <!-- Favicon do site -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Primeiro Site</title>
+
+    <!-- Estilos internos para o layout do site -->
+    <style>
+      body {
+        background-color: rgb(8, 58, 8); /* Cor de fundo verde */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; /* Definindo fonte padrão */
+        color: white; /* Cor do texto do site */
+        height: 100vh; /* Fazendo o body ocupar toda a altura da tela */
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+      }
+
+      .container {
+        text-align: center; /* Centraliza o conteúdo dentro da div */
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.1
+        ); /* Fundo levemente escuro para destacar */
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        color: red; /* Título em vermelho */
+        font-size: 32px; /* Ajusta o tamanho da fonte */
+        font-weight: bold; /* Torna o texto em negrito */
+      }
+
+      p {
+        color: white; /* Texto branco */
+        font-size: 20px; /* Ajusta o tamanho da fonte */
+      }
+
+      footer {
+        margin-top: 20px;
+      }
+
+      footer p {
+        font-size: 14px; /* Tamanho menor para o texto do rodapé */
+        color: #ddd; /* Cor mais suave para o rodapé */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meu primeiro site:</h1>
+      <h2>Olá Mundo!</h2>
+      <p>Pronto. Me livrei da maldição do "olá mundo"!</p>
+
+      <!-- Rodapé com o ano dinâmico -->
+      <footer>
+        <p>
+          <small>
+            &copy; <span class="footer-year"></span> Filipe Maciel. Programador
+            web fullstack! Todos os direitos reservados.
+          </small>
+        </p>
+      </footer>
+
+      <script>
+        // Exibe uma mensagem alertando o usuário
+        window.alert('Esse é meu primeiro site!');
+
+        // Pergunta ao usuário se ele quer ver a pesquisa
+        var userResponse = window.confirm('Quer ver?');
+
+        // Se o usuário clicar em "Cancelar" (resposta false), redireciona para o link
+        if (!userResponse) {
+          window.location.href =
+            'https://www.google.com/search?sca_esv=cb366a807a68809b&q=kittens&udm=2&fbs=AEQNm0A_ElqRadfJ052eEZYKSIj__pYFaFHKdnGcO42W-poa4qMSDpOn8nyF-SF-6R8JXdjzO8riEWVTlMa_GCV10xdo3uE3kqnCYdZxGpeCOJug31hRkkimKidlHbgo4h8u7WSz9KucuJAB4YormsClASmbcGxWFiBrs54rBunL7QHZqFhF0KGU1j5XqKdzpco3gqkYx-r0GUb4CqSXeQtodJNBqse69Q&sa=X&ved=2ahUKEwie6IvLlvCJAxWxs5UCHRZLAWEQtKgLegQIGxAB&biw=1920&bih=919&dpr=1';
+        }
+
+        // Atualiza o ano no rodapé dinamicamente
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelector('.footer-year').textContent =
+            new Date().getFullYear(); // Preenche o ano atual no rodapé
+        });
+      </script>
+    </div>
+  </body>
+</html>

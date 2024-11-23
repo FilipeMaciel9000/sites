@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Compatibilidade com IE -->
+    <title>Bloco de Notas</title>
+    <style>
+      /* Estilos básicos */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        text-align: center; /* Centraliza o conteúdo dentro da div */
+        background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente escuro */
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        resize: none;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bloco de Notas:</h1>
+      <!-- Campo de texto para o bloco de notas -->
+      <textarea id="notas" placeholder="Digite suas notas aqui..."></textarea
+      ><br />
+      <button onclick="salvarNotas()">Salvar Notas</button>
+    </div>
+
+    <script>
+      // Função para salvar as notas no localStorage
+      function salvarNotas() {
+        const notas = document.getElementById('notas').value; // Captura o valor do textarea
+        localStorage.setItem('notas', notas); // Salva as notas no localStorage
+        alert('Notas salvas com sucesso!');
+      }
+
+      // Carregar as notas salvas ao carregar a página
+      window.onload = function () {
+        const notasSalvas = localStorage.getItem('notas'); // Recupera as notas salvas
+        if (notasSalvas) {
+          document.getElementById('notas').value = notasSalvas; // Preenche o textarea com as notas
+        }
+      };
+    </script>
+  </body>
+</html>
